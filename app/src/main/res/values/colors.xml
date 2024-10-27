@@ -7,4 +7,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#C0BEBE</color>
+    <color name="dark_grey">#717171</color>
+    <color name="light_grey">#F4F4F4</color>
+    <color name="yellow">#FFD334</color>
+    <color name="red">#FF4231</color>
+    <color name="orange">#FFA033</color>
+
+    <color name="set_color_bgr">#FFC1B6</color>
+    <color name="pizza_color_bgr">#FFE1AD</color>
+    <color name="pasta_color_bgr">#BAB892</color>
+    <color name="risotto_color_bgr">#C4D3CE</color>
+    <color name="salad_color_bgr">#B9C4C8</color>
+    <color name="semi_finished_color_bgr_">#A3AE9D</color>
+    <color name="dessert_color_bgr">#FFE6B6</color>
+    <color name="additives_color_bgr">#D3C4C4</color>
+    <color name="drink_color_bgr">#FFD4AD</color>
 </resources>
