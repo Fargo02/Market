@@ -1,4 +1,4 @@
-package com.example.market.ui.home.ui
+package com.example.market.ui.home.ui.promotion
 
 import android.graphics.Paint
 import androidx.core.view.isVisible

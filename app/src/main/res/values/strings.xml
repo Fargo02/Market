@@ -6,13 +6,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-
-
-
+    <string name="empty_string" />
     <string name="menu_payment">Оплата</string>
     <string name="menu_my_address">Мои адреса</string>
     <string name="menu_my_orders">Мои заказы</string>
@@ -23,6 +20,8 @@
     <string name="menu_invite_friends">Пригласить друзей</string>
     <string name="menu_settings">Настройки</string>
     <string name="new_text">Новинка</string>
+    <string name="address">Адрес</string>
+    <string name="current_geolocation">Текущее местоположение</string>
 
     <string name="contact_us">Связаться \nс нами</string>
     <string name="delivery">Доставка</string>

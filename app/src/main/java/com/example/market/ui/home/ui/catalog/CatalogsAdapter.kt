@@ -1,4 +1,4 @@
-package com.example.market.ui.home.ui
+package com.example.market.ui.home.ui.catalog
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

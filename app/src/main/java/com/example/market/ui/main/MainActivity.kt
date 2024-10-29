@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.navView.setupWithNavController(navController)
 
+        binding.contactUsLayout.setOnClickListener{ println("click to contact us") }
     }
 
     override fun onSupportNavigateUp(): Boolean {

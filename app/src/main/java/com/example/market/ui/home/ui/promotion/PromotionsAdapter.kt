@@ -1,8 +1,7 @@
-package com.example.market.ui.home.ui
+package com.example.market.ui.home.ui.promotion
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.market.databinding.PromotionalItemBinding
 import com.example.market.domain.model.Promotional

@@ -1,4 +1,4 @@
-package com.example.market.ui.home.ui
+package com.example.market.ui.home.ui.catalog
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.market.databinding.CatalogItemBinding
