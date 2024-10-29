@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.map
 class LocationSearchInteractorImpl(
     private val repository: LocationSearchRepository
 ): LocationSearchInteractor {
-    override fun getAddress(token: String, query: String): Flow<Pair<List<Address>?, String?>> {
+    override suspend fun getAddress(token: String, query: String): Flow<Pair<List<Address>?, String?>> {
         return repository.getAddress(token, query).map { result ->
             when (result) {
                 is Resource.Success -> {

@@ -5,6 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface LocationSearchInteractor {
 
-    fun getAddress(token: String, query: String): Flow<Pair<List<Address>?, String?>>
+    suspend fun getAddress(token: String, query: String): Flow<Pair<List<Address>?, String?>>
 
 }

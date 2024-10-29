@@ -89,22 +89,24 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
         })
 
         binding.address.setOnClickListener {
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
 
         binding.addressArrow.setOnClickListener {
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
 
         locationsAdapter = LocationsAdapter{
-            binding.address.text = it.street
+            val inputMethodManager = requireContext().getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
+            inputMethodManager?.hideSoftInputFromWindow(binding.inputEditText.windowToken, 0)
+            binding.address.text = it.value
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
         }
         sectionsAdapter = SectionsAdapter { println("click to section item") }
         bannersAdapter = BannersAdapter { println("click to banner item") }
         catalogsAdapter = CatalogsAdapter { println("click to catalog item") }
         promotionsAdapter = PromotionsAdapter(object : PromotionClickListener {
             override fun onPlusClicked(model: Promotional) {
-
                 println("click to +")
                 //viewModel.addProduct(model)
             }
@@ -165,7 +167,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                viewModel.searchDebounce(changedText = s?.toString() ?: "")
+                viewModel.searchDebounce(s?.toString() ?: "")
             }
 
             override fun afterTextChanged(s: Editable?) { }
@@ -224,7 +226,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
     private fun showError() {
         locationsAdapter?.locations?.clear()
         locationsAdapter?.notifyDataSetChanged()
-        Toast.makeText(requireContext(), "Ошибка", Toast.LENGTH_SHORT).show()
     }
 
     private fun renderSearch(state: SearchState) {

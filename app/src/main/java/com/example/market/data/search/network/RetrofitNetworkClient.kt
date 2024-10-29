@@ -25,6 +25,7 @@ class RetrofitNetworkClient(
                         response.apply { resultCode = 200 }
                     }
                     catch (e: Throwable) {
+                        e.printStackTrace()
                         Response().apply { resultCode = 500 }
                     }
                 }

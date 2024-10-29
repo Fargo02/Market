@@ -1,5 +1,5 @@
 package com.example.market.data.search.dto
 
-class LocationSearchResponse(
+data class LocationSearchResponse(
     val suggestions: List<SuggestionDto>
 ): Response()

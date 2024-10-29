@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/street"
+        android:id="@+id/value"
         style="@style/regular_text_16"
         android:layout_width="@dimen/mark_0dp"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/city"
+        android:id="@+id/unrestricted_value"
         android:layout_width="@dimen/mark_0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/mark_18dp"
@@ -40,7 +40,7 @@
         android:fontFamily="@font/sf_pro_display_regular"
         tools:text="Ижевск, республика Удмуртия, Россия"
         app:layout_constraintStart_toEndOf="@id/geolocation_icon"
-        app:layout_constraintTop_toBottomOf="@id/street"
+        app:layout_constraintTop_toBottomOf="@id/value"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

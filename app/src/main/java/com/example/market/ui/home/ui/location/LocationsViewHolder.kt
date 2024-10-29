@@ -10,8 +10,8 @@ class LocationsViewHolder(
 ): RecyclerView.ViewHolder(binding.root) {
 
     fun bind(model: Address) {
-        binding.city.text = model.value
-        binding.street.text = "${model.street} ${model.house}"
+        binding.value.text = model.value
+        binding.unrestrictedValue.text = model.unrestrictedValue
 
         itemView.setOnClickListener { listener.onSectionClick(model) }
     }

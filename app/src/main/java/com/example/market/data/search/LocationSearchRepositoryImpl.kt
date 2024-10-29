@@ -13,7 +13,7 @@ class LocationSearchRepositoryImpl(
     private val networkClient: NetworkClient,
     private val mapper: LocationResponseMapper,
 ): LocationSearchRepository {
-    override fun getAddress(token: String, query: String): Flow<Resource<List<Address>>> = flow {
+    override suspend fun getAddress(token: String, query: String): Flow<Resource<List<Address>>> = flow {
         val response = networkClient.doRequest(LocationSearchRequest(token, query))
         when (response.resultCode) {
             -1 -> {

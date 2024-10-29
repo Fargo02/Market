@@ -1,6 +1,5 @@
 package com.example.market.ui.home.view_model
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -110,15 +109,15 @@ class HomeViewModel(
     )
 
     private val catalogs = listOf(
-        Catalog("Наборы", R.drawable.sets, R.color.set_color_bgr),
-        Catalog("Пицца", R.drawable.pizza, R.color.pizza_color_bgr),
-        Catalog("Паста", R.drawable.pasta, R.color.pasta_color_bgr),
-        Catalog("Ризотто", R.drawable.risotto, R.color.risotto_color_bgr),
-        Catalog("Салаты", R.drawable.salad, R.color.salad_color_bgr),
-        Catalog("Полу фабрикаты", R.drawable.semi_finished, R.color.semi_finished_color_bgr_),
-        Catalog("Десерты", R.drawable.dessert, R.color.dessert_color_bgr),
-        Catalog("Добавки к блюдам", R.drawable.additives, R.color.additives_color_bgr),
-        Catalog("Напитки", R.drawable.drinks, R.color.drink_color_bgr),
+        Catalog("Наборы", R.drawable.risotto, R.color.set_color_bgr),
+        Catalog("Пицца", R.drawable.salad, R.color.pizza_color_bgr),
+        Catalog("Паста", R.drawable.risotto, R.color.pasta_color_bgr),
+        Catalog("Ризотто", R.drawable.salad, R.color.risotto_color_bgr),
+        Catalog("Салаты", R.drawable.risotto, R.color.salad_color_bgr),
+        Catalog("Полу фабрикаты", R.drawable.salad, R.color.semi_finished_color_bgr_),
+        Catalog("Десерты", R.drawable.risotto, R.color.dessert_color_bgr),
+        Catalog("Добавки к блюдам", R.drawable.salad, R.color.additives_color_bgr),
+        Catalog("Напитки", R.drawable.risotto, R.color.drink_color_bgr),
     )
 
 
@@ -132,6 +131,10 @@ class HomeViewModel(
     fun observeSearchStateListener() : LiveData<SearchState> = searchStateListener
 
     fun searchDebounce(changedText: String) {
+        if(changedText == "") {
+            renderState(SearchState.Empty)
+            return
+        }
         if (latestSearchText != changedText) {
             latestSearchText = changedText
             trackSearchDebounce(changedText)
@@ -159,20 +162,14 @@ class HomeViewModel(
 
         when {
             errorMessage != null -> {
-                renderState(
-                    SearchState.Error
-                )
+                renderState(SearchState.Error)
             }
             addresses.isEmpty() -> {
-                renderState(
-                    SearchState.Empty
-                )
+                renderState(SearchState.Empty)
             }
             else -> {
                 renderState(
-                    SearchState.Content(
-                        addresses = addresses,
-                    )
+                    SearchState.Content(addresses)
                 )
             }
         }

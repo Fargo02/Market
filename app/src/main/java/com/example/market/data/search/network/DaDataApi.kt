@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface DaDataApi {
     @GET("/suggestions/api/4_1/rs/suggest/address")
-    fun getAddressSuggestions(
+    suspend fun getAddressSuggestions(
         @Header("Authorization") token: String,
         @Query("query") query: String): LocationSearchResponse
 }

@@ -247,7 +247,6 @@
         android:background="#99000000"
         android:visibility="gone"/>
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom_sheet"
         android:layout_width="match_parent"
@@ -255,7 +254,7 @@
         android:background="@drawable/bottom_sheet_bg"
         android:orientation="horizontal"
         app:behavior_hideable="true"
-        app:behavior_peekHeight="240dp"
+        app:behavior_peekHeight="220dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <View
