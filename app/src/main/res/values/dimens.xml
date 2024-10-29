@@ -40,14 +40,17 @@
 
     <dimen name="mark_0dp">0dp</dimen>
     <dimen name="mark_1dp">1dp</dimen>
+    <dimen name="mark_3dp">3dp</dimen>
     <dimen name="mark_5dp">5dp</dimen>
     <dimen name="mark_7dp">7dp</dimen>
     <dimen name="mark_8dp">8dp</dimen>
     <dimen name="mark_9dp">9dp</dimen>
     <dimen name="mark_10dp">10dp</dimen>
+    <dimen name="mark_11dp">11dp</dimen>
     <dimen name="mark_12dp">12dp</dimen>
     <dimen name="mark_15dp">15dp</dimen>
     <dimen name="mark_16dp">16dp</dimen>
+    <dimen name="mark_17dp">17dp</dimen>
     <dimen name="mark_19dp">19dp</dimen>
     <dimen name="mark_20dp">20dp</dimen>
     <dimen name="mark_21dp">21dp</dimen>
@@ -55,6 +58,7 @@
     <dimen name="mark_27dp">27dp</dimen>
     <dimen name="mark_28dp">28dp</dimen>
     <dimen name="mark_30dp">30dp</dimen>
+    <dimen name="mark_41dp">41dp</dimen>
     <dimen name="mark_42dp">42dp</dimen>
     <dimen name="mark_52dp">52dp</dimen>
     <dimen name="mark_81dp">81dp</dimen>

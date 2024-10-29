@@ -1,83 +1,287 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollView"
-    android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".ui.home.fragment.HomeFragment">
-    <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:fillViewport="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/start_guideline_15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/mark_15dp" />
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/end_guideline_15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/mark_15dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start_guideline_15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/mark_15dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end_guideline_15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/mark_15dp" />
 
-        <ImageView
-            android:id="@+id/nav_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_nav"
-            android:clickable="true"
-            android:layout_marginTop="@dimen/mark_32dp"
-            app:layout_constraintStart_toEndOf="@id/start_guideline_15dp"
-            app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:id="@+id/nav_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_nav"
+                android:clickable="true"
+                android:layout_marginTop="@dimen/mark_32dp"
+                app:layout_constraintStart_toEndOf="@id/start_guideline_15dp"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-        <TextView
-            android:id="@+id/delivery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/dark_grey"
-            android:text="@string/delivery"
-            android:layout_marginTop="@dimen/mark_27dp"
-            android:layout_marginStart="@dimen/mark_25dp"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:textSize="@dimen/text_mark_12sp"
-            app:layout_constraintStart_toEndOf="@id/nav_image"
-            app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/delivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_grey"
+                android:text="@string/delivery"
+                android:layout_marginTop="@dimen/mark_27dp"
+                android:layout_marginStart="@dimen/mark_25dp"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:textSize="@dimen/text_mark_12sp"
+                app:layout_constraintStart_toEndOf="@id/nav_image"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-        <TextView
-            android:id="@+id/address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            tools:text="Пискунова, 24"
-            android:fontFamily="@font/sf_pro_display_regular"
-            android:textSize="@dimen/text_mark_16sp"
-            app:layout_constraintTop_toBottomOf="@id/delivery"
-            app:layout_constraintStart_toStartOf="@id/delivery"/>
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/address"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:textSize="@dimen/text_mark_16sp"
+                app:layout_constraintTop_toBottomOf="@id/delivery"
+                app:layout_constraintStart_toStartOf="@id/delivery"/>
 
-        <ImageView
-            android:id="@+id/address_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow"
-            android:clickable="true"
-            android:layout_marginStart="@dimen/mark_5dp"
-            app:layout_constraintTop_toTopOf="@id/address"
-            app:layout_constraintStart_toEndOf="@id/address"
-            app:layout_constraintBottom_toBottomOf="@id/address"/>
+            <ImageView
+                android:id="@+id/address_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow"
+                android:clickable="true"
+                android:layout_marginStart="@dimen/mark_5dp"
+                app:layout_constraintTop_toTopOf="@id/address"
+                app:layout_constraintStart_toEndOf="@id/address"
+                app:layout_constraintBottom_toBottomOf="@id/address"/>
+
+            <EditText
+                android:id="@+id/inputEditText"
+                style="@style/search_edit_text"
+                android:layout_width="@dimen/mark_0dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="@dimen/mark_16dp"
+                android:layout_marginEnd="@dimen/mark_10dp"
+                android:background="@drawable/edit_text"
+                android:drawableEnd="@drawable/ic_search"
+                android:drawableTint="@color/dark_grey"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="@string/product_search"
+                android:inputType="text"
+                android:textColorHint="@color/dark_grey"
+                android:lines="1"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:maxLength="30"
+                android:paddingHorizontal="@dimen/mark_10dp"
+                android:textSize="@dimen/text_mark_16sp"
+                android:importantForAutofill="no"
+                app:layout_constraintStart_toEndOf="@id/start_guideline_15dp"
+                app:layout_constraintEnd_toStartOf="@id/button_like"
+                app:layout_constraintTop_toBottomOf="@id/address"/>
+
+            <ImageView
+                android:id="@+id/button_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_like"
+                app:layout_constraintTop_toTopOf="@id/inputEditText"
+                app:layout_constraintBottom_toBottomOf="@id/inputEditText"
+                app:layout_constraintEnd_toStartOf="@id/end_guideline_15dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sections_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mark_20dp"
+                android:paddingEnd="@dimen/mark_10dp"
+                android:paddingStart="@dimen/mark_15dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:orientation="horizontal"
+                tools:listitem="@layout/section_item"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inputEditText"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline_15dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/banners_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mark_30dp"
+                android:paddingEnd="@dimen/mark_5dp"
+                android:paddingStart="@dimen/mark_15dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:orientation="horizontal"
+                tools:listitem="@layout/banner_item"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sections_list"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline_15dp"/>
+
+            <TextView
+                android:id="@+id/promotions"
+                style="@style/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mark_30dp"
+                android:text="@string/promotions"
+                app:layout_constraintStart_toEndOf="@id/start_guideline_15dp"
+                app:layout_constraintTop_toBottomOf="@id/banners_list"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/see_all_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/mark_25dp"
+                android:backgroundTint="@color/light_grey"
+                app:cardElevation="@dimen/mark_0dp"
+                app:layout_constraintEnd_toStartOf="@id/end_guideline_15dp"
+                app:layout_constraintBottom_toBottomOf="@id/promotions">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/see_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/mark_5dp"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:paddingVertical="@dimen/mark_5dp"
+                        android:paddingStart="@dimen/mark_10dp"
+                        android:text="@string/see_all"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_mark_12sp"
+                        app:layout_constraintEnd_toStartOf="@id/arrow_right"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/arrow_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/mark_10dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/see_all"
+                        app:layout_constraintBottom_toBottomOf="@id/see_all"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/promotional_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mark_20dp"
+                android:paddingEnd="@dimen/mark_10dp"
+                android:paddingStart="@dimen/mark_10dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:orientation="horizontal"
+                tools:listitem="@layout/promotional_item"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/promotions"
+                app:layout_constraintEnd_toEndOf="@id/end_guideline_15dp"/>
+
+            <TextView
+                android:id="@+id/catalog"
+                style="@style/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mark_27dp"
+                android:text="@string/catalog"
+                app:layout_constraintStart_toEndOf="@id/start_guideline_15dp"
+                app:layout_constraintTop_toBottomOf="@id/promotional_list"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/catalog_list"
+                android:layout_width="@dimen/mark_0dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                android:clipToPadding="false"
+                android:layout_marginTop="@dimen/mark_7dp"
+                android:layout_marginBottom="@dimen/mark_16dp"
+                android:layout_marginHorizontal="@dimen/mark_1dp"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="9"
+                app:spanCount="3"
+                tools:listitem="@layout/catalog_item"
+                app:layout_constraintTop_toBottomOf="@id/catalog"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:visibility="gone"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bottom_sheet_bg"
+        android:orientation="horizontal"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="240dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <View
+            android:id="@+id/holder"
+            android:layout_width="@dimen/mark_41dp"
+            android:layout_height="@dimen/mark_3dp"
+            android:layout_marginTop="@dimen/mark_8dp"
+            android:background="@drawable/rounded_corners"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <EditText
-            android:id="@+id/inputEditText"
+            android:id="@+id/bottom_sheet_editText"
             style="@style/search_edit_text"
             android:layout_width="@dimen/mark_0dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="@dimen/mark_16dp"
-            android:layout_marginEnd="@dimen/mark_10dp"
-            android:background="@drawable/edit_text"
-            android:drawableEnd="@drawable/ic_search"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:paddingBottom="14dp"
+            android:background="@drawable/edit_text_bottom_sheet"
+            android:layout_marginTop="@dimen/mark_25dp"
+            android:layout_marginEnd="@dimen/mark_15dp"
+            android:drawableStart="@drawable/ic_search_bottom_sheet"
+            android:drawablePadding="@dimen/mark_19dp"
+            android:layout_marginStart="@dimen/mark_15dp"
+            android:drawableTint="@color/dark_grey"
             android:fontFamily="@font/roboto_regular"
             android:hint="@string/product_search"
             android:inputType="text"
@@ -85,151 +289,65 @@
             android:imeOptions="actionDone"
             android:singleLine="true"
             android:maxLength="30"
-            android:paddingHorizontal="@dimen/mark_10dp"
             android:textSize="@dimen/text_mark_16sp"
             android:importantForAutofill="no"
-            app:layout_constraintStart_toEndOf="@id/start_guideline_15dp"
-            app:layout_constraintEnd_toStartOf="@id/button_like"
-            app:layout_constraintTop_toBottomOf="@id/address"/>
-
-        <ImageView
-            android:id="@+id/button_like"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_like"
-            app:layout_constraintTop_toTopOf="@id/inputEditText"
-            app:layout_constraintBottom_toBottomOf="@id/inputEditText"
-            app:layout_constraintEnd_toStartOf="@id/end_guideline_15dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/sections_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mark_20dp"
-            android:paddingEnd="@dimen/mark_10dp"
-            android:paddingStart="@dimen/mark_15dp"
-            android:clipToPadding="false"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="5"
-            tools:orientation="horizontal"
-            tools:listitem="@layout/section_item"
-            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/inputEditText"
-            app:layout_constraintEnd_toEndOf="@id/end_guideline_15dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/banners_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mark_30dp"
-            android:paddingEnd="@dimen/mark_5dp"
-            android:paddingStart="@dimen/mark_15dp"
-            android:clipToPadding="false"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="5"
-            tools:orientation="horizontal"
-            tools:listitem="@layout/banner_item"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sections_list"
-            app:layout_constraintEnd_toEndOf="@id/end_guideline_15dp"/>
-
-        <TextView
-            android:id="@+id/promotions"
-            style="@style/title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mark_30dp"
-            android:text="@string/promotions"
-            app:layout_constraintStart_toEndOf="@id/start_guideline_15dp"
-            app:layout_constraintTop_toBottomOf="@id/banners_list"/>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/see_all_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/mark_25dp"
-            android:backgroundTint="@color/light_grey"
-            app:cardElevation="@dimen/mark_0dp"
-            app:layout_constraintEnd_toStartOf="@id/end_guideline_15dp"
-            app:layout_constraintBottom_toBottomOf="@id/promotions">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/see_all"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/mark_5dp"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:paddingVertical="@dimen/mark_5dp"
-                    android:paddingStart="@dimen/mark_10dp"
-                    android:text="@string/see_all"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_mark_12sp"
-                    app:layout_constraintEnd_toStartOf="@id/arrow_right"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/arrow_right"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/mark_10dp"
-                    android:src="@drawable/ic_arrow_right"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/see_all"
-                    app:layout_constraintBottom_toBottomOf="@id/see_all"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/promotional_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mark_20dp"
-            android:paddingEnd="@dimen/mark_10dp"
-            android:paddingStart="@dimen/mark_10dp"
-            android:clipToPadding="false"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="5"
-            tools:orientation="horizontal"
-            tools:listitem="@layout/promotional_item"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/promotions"
-            app:layout_constraintEnd_toEndOf="@id/end_guideline_15dp"/>
-
-        <TextView
-            android:id="@+id/catalog"
-            style="@style/title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/mark_27dp"
-            android:text="@string/catalog"
-            app:layout_constraintStart_toEndOf="@id/start_guideline_15dp"
-            app:layout_constraintTop_toBottomOf="@id/promotional_list"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/catalog_list"
+        <View
+            android:id="@+id/divider"
             android:layout_width="@dimen/mark_0dp"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            android:clipToPadding="false"
-            android:layout_marginTop="@dimen/mark_7dp"
-            android:layout_marginBottom="@dimen/mark_16dp"
-            android:layout_marginHorizontal="@dimen/mark_10dp"
-            android:nestedScrollingEnabled="false"
-            tools:itemCount="9"
-            app:spanCount="3"
-            tools:listitem="@layout/catalog_item"
-            app:layout_constraintTop_toBottomOf="@id/catalog"
+            android:layout_height="@dimen/mark_1dp"
+            android:layout_marginHorizontal="@dimen/mark_15dp"
+
+            android:background="@drawable/rounded_corners"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
+            app:layout_constraintTop_toBottomOf="@id/bottom_sheet_editText"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:layout_marginTop="@dimen/mark_5dp"
+            android:layout_marginEnd="@dimen/mark_15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/bottom_sheet_editText" />
+        <ImageView
+            android:id="@+id/geolocation_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mark_15dp"
+            android:layout_marginTop="@dimen/mark_25dp"
+            android:src="@drawable/ic_current_geolocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottom_sheet_editText" />
+        <TextView
+            android:id="@+id/current_geolocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mark_19dp"
+            android:layout_marginTop="@dimen/mark_20dp"
+            android:text="@string/current_geolocation"
+            android:textSize="@dimen/text_mark_16sp"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintStart_toEndOf="@id/geolocation_icon"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/location_list"
+            android:layout_width="@dimen/mark_0dp"
+            android:layout_height="@dimen/mark_0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:clipToPadding="false"
+            android:layout_marginBottom="@dimen/mark_16dp"
+            tools:itemCount="5"
+            tools:listitem="@layout/location_item"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintTop_toBottomOf="@id/current_geolocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
